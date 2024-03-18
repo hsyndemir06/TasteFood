@@ -1,0 +1,31 @@
+﻿@model List<TesteFood.Entities.About>
+
+
+@foreach (var x in Model)
+{
+
+<div class="col-sm-8 wrap-about py-5 ftco-animate img" style="background-image: url(/templates/tasteit-master/images/about.jpg);">
+    <div class="row pb-5 pb-md-0">
+        <div class="col-md-12 col-lg-7">
+            <div class="heading-section mt-5 mb-4">
+                <div class="pl-lg-3 ml-md-5">
+                    <span class="subheading">Hakkımızda</span>
+                    <h2 class="mb-4">@x.AboutTitle </h2>
+                </div>
+            </div>
+            <div class="pl-lg-3 ml-md-5">
+                <p>
+
+                    @x.AboutDescripton.Substring(0, 250)...
+                    @*Güneydoğu yemekleri bol etli, salçalı ve baharatlı oluyor. Buğday ve bulgur da en çok kullanılan malzemeler halinde.
+                    Bunun yanında nohut, mercimek, pirinç gibi bakliyat da yaygın olarak kullanılır. Süt ürünleri ve kırmızı et yörede fazla miktarda
+                    kullanılıyor. Güneydoğu mutfağı kırmızı et
+                    açısından en çok koyun etini tercih etmekte. Bunlar baharatlarla, acı salçalarla karıştırılarak çeşitli şekillerde hazırlanıyor*@
+                </p>
+                <p><a href="/About/Index" class="btn btn-primary">Devamını Gör</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

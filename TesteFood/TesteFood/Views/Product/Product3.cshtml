@@ -1,0 +1,32 @@
+﻿@model List<TesteFood.Entities.TblUrun>
+
+
+
+<div class="col-md-6 col-lg-4">
+    <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate">
+            <h3>içecekler</h3>
+        </div>
+        @foreach (var x in Model)
+        {
+
+            <div class="menus d-flex ftco-animate">
+                <div class="menu-img img" style="background-image: url(@x.TblUrunImageUrl);"></div>
+                <div class="text">
+                    <div class="d-flex">
+                        <div class="one-half">
+                            <h3>@x.TblUrunName</h3>
+                        </div>
+                        <div class="one-forth">
+                            <span class="price">@x.TblUrunPrice</span>
+                        </div>
+                    </div>
+                    <h6>@x.TblUruntDescription</h6>
+                </div>
+            </div>
+        }
+        <span class="flat flaticon-omelette" style="left: 0;"></span>
+        <span class="flat flaticon-burger" style="right: 0;"></span>
+    </div>
+</div>
+

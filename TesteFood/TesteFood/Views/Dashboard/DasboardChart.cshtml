@@ -1,0 +1,45 @@
+﻿@model List<TesteFood.Entities.Testimonial>
+
+<div class="row mb-3">
+    <div class="col-6 ">
+        <div class="card ">
+            <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between ">
+                <h6 class="m-0 font-weight-bold text-light ">Yapılan Yorumlar</h6>
+            </div>
+            <div>
+                @foreach (var x in Model)
+                {
+
+                    <div class="customer-message align-items-center">
+                        <a class="font-weight-bold" href="/AdminLayout/AllMessage">
+                            <div class="text-truncate message-title">
+                                @x.TestimonialDescription
+                            </div>
+                            <div class="small text-gray-500 message-time font-weight-bold">@x.TestimonialNameSurname || @DateTime.Now</div>
+                        </a>
+                    </div>
+                }
+
+                <div class="card-footer text-center">
+                    <a class="m-0 small text-primary card-link" href="/AdminLayout/AllMessage/">
+                        Tümünü Göster <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        @Html.Action("DashboardProgressbar", "Dashboard")
+    </div>
+</div>
+
+
+
+
+<script src="~/templates/admin/vendor/jquery/jquery.min.js"></script>
+<script src="~/templates/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/templates/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="~/templates/admin/js/ruang-admin.min.js"></script>
+<script src="~/templates/admin/vendor/chart.js/Chart.min.js"></script>
+<script src="~/templates/admin/js/demo/chart-area-demo.js"></script>  

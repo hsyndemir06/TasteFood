@@ -1,0 +1,33 @@
+﻿@model List<TesteFood.Entities.Contact>
+
+@{
+    ViewBag.Title = "AllMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="font-bold text-center">Öneri ve Şikayet Sayfası</h3>
+
+<table class="table table-hover">
+
+
+    <tr>
+        <th>SıraNo</th>
+        <th>Gönderen Ad Soyad</th>
+        <th>Konu</th>
+        <th>Aciklama</th>
+        <th>Mail</th>
+        <th>iletisime Geç</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ContactID</td>
+            <td>@x.ContactName</td>
+            <td>@x.ContactSubject</td>
+            <td>@x.ContactMessage</td>
+            <td>@x.ContactEmail</td>
+            <td><button class="btn btn-primary"><a href="#"></a>Cevapla</button> </td> 
+        </tr>
+    }
+</table>
+

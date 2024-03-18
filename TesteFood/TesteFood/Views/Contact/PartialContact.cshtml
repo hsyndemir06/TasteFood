@@ -1,0 +1,38 @@
+﻿@model List<TesteFood.Entities.Adress>
+
+<section class="ftco-section contact-section bg-light">
+    <div class="container">
+
+
+        <div class="row d-flex contact-info">
+            <div class="col-md-12">
+                <h2 class="h1 font-weight-bold text-center">Iletisim Bilgilerimiz</h2>
+            </div>
+            @foreach (var x in Model)
+            {
+                <div class="w-100"></div>
+                <div class="col-md-3 d-flex">
+                    <div class="dbox">
+                        <p><span>Address:</span> @x.AdressDescription </p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="dbox">
+                        <p><span>Telefon:</span> <a href="">@x.AdressPhone</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="dbox">
+                        <p><span>Email:</span> <a href="">@x.AdressEmail</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="dbox">
+                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

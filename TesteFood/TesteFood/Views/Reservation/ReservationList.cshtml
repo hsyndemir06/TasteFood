@@ -1,0 +1,65 @@
+﻿
+@model List<TesteFood.Entities.Reservation>
+
+@{
+    ViewBag.Title = "ReservationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="container-fluid" id="container-wrapper">
+
+    <div class="row">
+        @foreach (var x in Model)
+        {
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card h-100 ">
+                    <div class="card-body">
+                        <div>
+                            <div class="row align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h6 mb-0 font-weight-bold text-gray-800"> @x.ReservationName </div>
+
+                                    <div class="mt-2 mb-0 text-muted text-xs">
+                                        @x.ReservationEmail
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">@(((DateTime)x.ReservationDate).ToString("MMM-dd-yyyy"))  @x.ReservationTime</div>
+
+                                    </div>
+                                    Kişi Sayısı: @x.ReservationGuest
+                                </div>
+                                <div class="col-auto">
+                                    @x.ReservationPhone
+                                </div>
+                            </div>
+                        </div>
+                        @if (x.ReservationStatus == "Aktif")
+                        {
+                            
+
+                                <a href="/Reservation/ReservationAktif/@x.ReservationID"><i class="fas fa-check fa-1x text-success"></i> </a>
+                            
+
+                        }
+                                <a href="/Reservation/ReservationAktif/@x.ReservationID"><i class="fas fa-check fa-1x text-success">Onayla</i> </a>
+                                <a href="/Reservation/ReservationPasif/@x.ReservationID"><i class="fas fa-times fa-1x text-danger">İptal</i> </a>
+                        
+                       
+                            
+
+                            
+
+                        
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+    </div>
+
+</div>
+
+
